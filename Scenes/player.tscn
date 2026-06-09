@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bbgq21qgtiv1y"]
+
+[ext_resource type="Script" uid="uid://0hyvacgtt4y1" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cxitn0wkk6fnu" path="res://Assets/simple-ping-pong-2Dgame-assets/arts/Player.png" id="1_v0iea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+size = Vector2(23, 120)
+
+[node name="Player" type="CharacterBody2D" unique_id=582100398]
+script = ExtResource("1_cvnsp")
+speed = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=759061110]
+position = Vector2(0, -3.0000014)
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=776990221]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_sh265")

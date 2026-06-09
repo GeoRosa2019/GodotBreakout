@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://psbanxmq2ray"]
+
+[ext_resource type="Script" uid="uid://creosc810wss4" path="res://Scripts/main_menu.gd" id="1_28flt"]
+
+[node name="Main_Menu" type="Node2D" unique_id=1699740016]
+script = ExtResource("1_28flt")
+
+[node name="Button_Manager" type="Control" parent="." unique_id=1039991996]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 210.0
+offset_top = 122.0
+offset_right = 210.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Button_Manager" unique_id=1128642555]
+layout_mode = 0
+offset_left = 204.0
+offset_right = 560.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="Option" type="Button" parent="Button_Manager" unique_id=460528265]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 142.0
+offset_right = 560.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="Quit" type="Button" parent="Button_Manager" unique_id=1644699835]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -9.544001
+anchor_top = -3.344
+anchor_right = -9.544001
+anchor_bottom = -3.344
+offset_left = 204.0
+offset_top = 296.0
+offset_right = 560.0
+offset_bottom = 403.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_Manager/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Button_Manager/Quit" to="." method="_on_quit_pressed"]

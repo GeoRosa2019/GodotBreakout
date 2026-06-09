@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bisu3qgtvvsl"]
+
+[ext_resource type="Script" uid="uid://b6grrphpqur83" path="res://Scripts/cpu.gd" id="1_dopw7"]
+[ext_resource type="Texture2D" uid="uid://dgrttclttk30f" path="res://Assets/simple-ping-pong-2Dgame-assets/arts/Computer.png" id="1_xwqh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dopw7"]
+size = Vector2(20, 124)
+
+[node name="CPU" type="CharacterBody2D" unique_id=1763461983]
+script = ExtResource("1_dopw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107456721]
+shape = SubResource("RectangleShape2D_dopw7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=354487645]
+texture = ExtResource("1_xwqh3")

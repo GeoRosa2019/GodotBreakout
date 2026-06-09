@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://uu087o8i4216"]
+
+[ext_resource type="Script" uid="uid://dfcjt6e3lsp2k" path="res://Scripts/cpu_score_zone.gd" id="1_05l2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2qt3"]
+
+[node name="cpu_score_zone" type="Area2D" unique_id=1269068997]
+script = ExtResource("1_05l2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=958123555]
+shape = SubResource("RectangleShape2D_n2qt3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
