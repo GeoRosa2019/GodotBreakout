@@ -1,46 +1,15 @@
 [gd_scene format=3 uid="uid://bxq7r4s53oqmi"]
 
 [ext_resource type="PackedScene" uid="uid://bbgq21qgtiv1y" path="res://Scenes/player.tscn" id="1_ebmjs"]
-[ext_resource type="Script" uid="uid://01vg1mdr8yyy" path="res://Scripts/game_manager.gd" id="1_i6g32"]
 [ext_resource type="PackedScene" uid="uid://b6nqulstgu038" path="res://Scenes/ball.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://bisu3qgtvvsl" path="res://Scenes/cpu.tscn" id="2_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dsircs1b07ld6" path="res://Scenes/boarders.tscn" id="3_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://b83jtfkvfjk3b" path="res://Scenes/score_zone.tscn" id="4_3dryh"]
-[ext_resource type="PackedScene" uid="uid://uu087o8i4216" path="res://Scenes/cpu_score_zone.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://flwkmafc75h6" path="res://Scenes/breakable_brick.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node2D" unique_id=102264006]
-
-[node name="GameManager" type="Node" parent="." unique_id=1743384947]
-unique_name_in_owner = true
-script = ExtResource("1_i6g32")
-
-[node name="Label" type="Node" parent="GameManager" unique_id=1692483071]
-
-[node name="PlayerScore" type="Label" parent="GameManager/Label" unique_id=1981259915]
-visible = false
-offset_left = 89.0
-offset_top = -232.0
-offset_right = 129.0
-offset_bottom = -209.0
-theme_override_font_sizes/font_size = 50
-text = "0"
-
-[node name="CPUScore" type="Label" parent="GameManager/Label" unique_id=1341335460]
-visible = false
-offset_left = -91.0
-offset_top = -232.0
-offset_right = -51.0
-offset_bottom = -209.0
-theme_override_font_sizes/font_size = 50
-text = "0"
 
 [node name="Player" parent="." unique_id=582100398 instance=ExtResource("1_ebmjs")]
 position = Vector2(0, 292)
 rotation = 1.5707964
-
-[node name="CPU" parent="." unique_id=1763461983 instance=ExtResource("2_wowpa")]
-position = Vector2(-535, 1)
-speed = 500.0
 
 [node name="Ball" parent="." unique_id=401520195 instance=ExtResource("2_qxrlw")]
 
@@ -50,19 +19,20 @@ position = Vector2(4, 1)
 [node name="Borders" type="Node" parent="." unique_id=903860754]
 
 [node name="Borders" parent="Borders" unique_id=2071439571 instance=ExtResource("3_wrm1d")]
-position = Vector2(-2, 329)
-scale = Vector2(15.800001, 1)
+position = Vector2(571, -6.999998)
+scale = Vector2(0.42166197, -31.725363)
 
-[node name="Borders2" parent="Borders" unique_id=840304297 instance=ExtResource("3_wrm1d")]
-position = Vector2(-2, -313.99997)
-scale = Vector2(15.800001, 1)
+[node name="Borders3" parent="Borders" unique_id=314570917 instance=ExtResource("3_wrm1d")]
+position = Vector2(-567, -3.999998)
+scale = Vector2(0.42166197, -31.725363)
 
-[node name="scoreZones" type="Node" parent="." unique_id=20897238]
+[node name="Bricks1" type="Node" parent="." unique_id=1756250366]
 
-[node name="scoreZone" parent="scoreZones" unique_id=1852793413 instance=ExtResource("4_3dryh")]
-position = Vector2(-576, 5)
-scale = Vector2(1, 31.080002)
+[node name="Brick" parent="Bricks1" unique_id=1124446560 instance=ExtResource("4_3dryh")]
+position = Vector2(3, -180)
 
-[node name="cpu_score_zone" parent="scoreZones" unique_id=1269068997 instance=ExtResource("7_1l0tm")]
-position = Vector2(580, 8)
-scale = Vector2(1.16, 33.599205)
+[node name="Brick2" parent="Bricks1" unique_id=1207547637 instance=ExtResource("4_3dryh")]
+position = Vector2(55, -180)
+
+[node name="Brick3" parent="Bricks1" unique_id=328718323 instance=ExtResource("4_3dryh")]
+position = Vector2(-47, -180)

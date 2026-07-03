@@ -9,31 +9,17 @@ func _ready():
 func _process(delta):
 	if not launched and Input.is_action_just_pressed("space_button"):
 		launched = true
-		randomize_direction()
+		velocity = Vector2.UP * speed  # or whatever direction you want the ball to start moving
 
-func randomize_direction():
-	# Randomly choose left or right
-	var x_direction = [-1, 1].pick_random()
-
-	# Random vertical angle
-	var y_direction = randf_range(-0.6, 0.6)
-
-	# Create normalized direction vector
-	velocity = Vector2(x_direction, y_direction).normalized() * speed
-
-func _physics_process(delta):
-	
-	var collision = move_and_collide(velocity * delta)
-
+# Ball script
+func _physics_process(delta: float) -> void:
+	if not launched:
+		return
+	var collision := move_and_collide(velocity * delta)
 	if collision:
-		# Bounce using collision normal
+		var collider = collision.get_collider()
+		if collider.is_in_group("bricks"):
+			print("Hit a brick!")
+			collider.queue_free()
 		velocity = velocity.bounce(collision.get_normal())
-
-		# Optional: slightly increase speed over time
-		velocity *= 1.05
-
-# Resets the ball after scoring
-func reset():
-	position = Vector2(0, -1)
-	velocity = Vector2.ZERO
-	launched = false
+		

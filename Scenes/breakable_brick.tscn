@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://flwkmafc75h6"]
 
-[node name="breakable_brick" type="Node2D" unique_id=1190241123]
+[ext_resource type="Script" uid="uid://b8ih1xjsucxar" path="res://breakable_brick.gd" id="1_gskf4"]
+[ext_resource type="Texture2D" uid="uid://66n51602jh8y" path="res://Assets/Brick_Breaker_Assets/bricks.png" id="1_w45uv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spwtx"]
+size = Vector2(49, 24)
+
+[node name="Brick" type="StaticBody2D" unique_id=1124446560]
+script = ExtResource("1_gskf4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054822201]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_w45uv")
+region_enabled = true
+region_rect = Rect2(111.37804, 0.10048866, 33.381195, 15.550247)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1049124291]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_spwtx")
