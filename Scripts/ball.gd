@@ -8,6 +8,7 @@ func _ready():
 	
 func _process(delta):
 	if not launched and Input.is_action_just_pressed("space_button"):
+		print("Button Pressed")
 		launched = true
 		velocity = Vector2.UP * speed  # or whatever direction you want the ball to start moving
 
@@ -19,7 +20,5 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		var collider = collision.get_collider()
 		if collider.is_in_group("bricks"):
-			print("Hit a brick!")
-			collider.queue_free()
+			collider.hit()
 		velocity = velocity.bounce(collision.get_normal())
-		

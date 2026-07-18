@@ -22,6 +22,7 @@ project/assembly_name="ArcadeGame"
 [global_group]
 
 bricks=""
+Boarder="Boarders"
 
 [input]
 

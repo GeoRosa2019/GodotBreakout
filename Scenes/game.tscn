@@ -18,11 +18,21 @@ position = Vector2(4, 1)
 
 [node name="Borders" type="Node" parent="." unique_id=903860754]
 
-[node name="Borders" parent="Borders" unique_id=2071439571 instance=ExtResource("3_wrm1d")]
+[node name="Borders" parent="Borders" unique_id=2071439571 groups=["Boarder"] instance=ExtResource("3_wrm1d")]
 position = Vector2(571, -6.999998)
 scale = Vector2(0.42166197, -31.725363)
 
-[node name="Borders3" parent="Borders" unique_id=314570917 instance=ExtResource("3_wrm1d")]
+[node name="Borders2" parent="Borders" unique_id=368581612 groups=["Boarder"] instance=ExtResource("3_wrm1d")]
+position = Vector2(3.637979e-12, -320.99997)
+rotation = -1.5707964
+scale = Vector2(0.42166197, -58.485367)
+
+[node name="Borders4" parent="Borders" unique_id=789211683 groups=["Boarder"] instance=ExtResource("3_wrm1d")]
+position = Vector2(-9.094947e-13, 320.00003)
+rotation = -1.5707964
+scale = Vector2(0.42166197, -58.485367)
+
+[node name="Borders3" parent="Borders" unique_id=314570917 groups=["Boarder"] instance=ExtResource("3_wrm1d")]
 position = Vector2(-567, -3.999998)
 scale = Vector2(0.42166197, -31.725363)
 
